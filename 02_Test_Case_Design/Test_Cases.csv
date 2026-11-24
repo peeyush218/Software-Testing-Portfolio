@@ -1,0 +1,18 @@
+﻿ID,Module,Technique,Preconditions,Steps and data,Expected result
+TC-01,Login,Equivalence partitioning,Fresh app; alice ₹500 and bob ₹100.,Sign in as alice with demo123; read the wallet balance.,₹500
+TC-02,Login,Equivalence partitioning,Fresh app; alice ₹500 and bob ₹100.,Sign in as alice with an incorrect password.,Invalid username or password.
+TC-03,Top-up,Boundary value analysis,Fresh app; alice ₹500 and bob ₹100.,"Sign in as alice; submit a ₹9 top-up; check message, balance, and history.","Top-up must be between ₹10 and ₹5,000. | balance ₹500 | history rows 0"
+TC-04,Top-up,Boundary value analysis,Fresh app; alice ₹500 and bob ₹100.,"Sign in as alice; submit a ₹10 top-up; check message, balance, and history.",TX-0001 • Successful | balance ₹510 | history rows 1
+TC-05,Top-up,Boundary value analysis,Fresh app; alice ₹500 and bob ₹100.,"Sign in as alice; submit a ₹11 top-up; check message, balance, and history.",TX-0001 • Successful | balance ₹511 | history rows 1
+TC-06,Top-up,Boundary value analysis,Fresh app; alice ₹500 and bob ₹100.,"Sign in as alice; submit a ₹4,999 top-up; check message, balance, and history.","TX-0001 • Successful | balance ₹5,499 | history rows 1"
+TC-07,Top-up,Boundary value analysis,Fresh app; alice ₹500 and bob ₹100.,"Sign in as alice; submit a ₹5,000 top-up; check message, balance, and history.","TX-0001 • Successful | balance ₹5,500 | history rows 1"
+TC-08,Top-up,Boundary value analysis,Fresh app; alice ₹500 and bob ₹100.,"Sign in as alice; submit a ₹5,001 top-up; check message, balance, and history.","Top-up must be between ₹10 and ₹5,000. | balance ₹500 | history rows 0"
+TC-09,Transfer,Decision table / equivalence partitioning,Fresh app; alice ₹500 and bob ₹100.,Sign in as alice and send ₹200 to bob; check both accounts and bob's history.,TX-0001 • Successful | balance ₹300 | history rows 1 | bob ₹300 | history TX-0001 / Transfer / alice / bob / ₹200 / Successful
+TC-10,Transfer,Decision table,Fresh app; alice ₹500 and bob ₹100.,Sign in as alice; try sending ₹501 to bob.,Insufficient balance. | balance ₹500 | history rows 0
+TC-11,Transfer,Decision table,Fresh app; alice ₹500 and bob ₹100.,Sign in as alice; try sending ₹200 to unknown.,Choose another existing wallet. | balance ₹500 | history rows 0
+TC-12,Transfer,Decision table,Fresh app; alice ₹500 and bob ₹100.,Sign in as alice; try sending ₹501 to unknown.,Choose another existing wallet. | balance ₹500 | history rows 0
+TC-13,Transfer,Equivalence partitioning,Fresh app; alice ₹500 and bob ₹100.,Sign in as alice; try sending ₹0 to bob.,Enter a positive whole-rupee amount. | balance ₹500 | history rows 0
+TC-14,Payment,State transition,Fresh app; alice ₹500 and bob ₹100.,Sign in as alice; start a ₹200 payment and observe the pending transaction.,TX-0001 • Pending | balance ₹300 | history rows 1
+TC-15,Payment,State transition,Fresh app; alice ₹500 and bob ₹100.,Sign in as alice; start a ₹200 payment; select it; complete it; inspect balance and history.,TX-0001 • Pending | balance ₹300 | history rows 1 -> TX-0001 • Successful | balance ₹300 | history rows 1 | history status Successful
+TC-16,Payment,State transition,Fresh app; alice ₹500 and bob ₹100.,Sign in as alice; start a ₹200 payment; select it; fail it; inspect balance and history.,TX-0001 • Pending | balance ₹300 | history rows 1 -> TX-0001 • Failed | balance ₹500 | history rows 1 | history status Failed
+TC-17,History,Functional,Fresh app; alice ₹500 and bob ₹100.,Sign in as alice; top up ₹100 and send ₹200 to bob; read both history rows.,TX-0002 / Transfer / alice / bob / ₹200 / Successful | TX-0001 / Top-up / alice /  / ₹100 / Successful

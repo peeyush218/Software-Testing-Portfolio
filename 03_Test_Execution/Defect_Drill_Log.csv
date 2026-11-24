@@ -1,0 +1,2 @@
+﻿ID,Build,Date,Expected,Actual,Status,Evidence filename
+DRILL-01,Seeded missing-refund variant,2026-11-24,TX-0001 • Pending | balance ₹300 | history rows 1 -> TX-0001 • Failed | balance ₹500 | history rows 1 | history status Failed,TX-0001 • Pending | balance ₹300 | history rows 1 -> TX-0001 • Failed | balance ₹300 | history rows 1 | history status Failed,Fail,DRILL-01-missing-refund.png

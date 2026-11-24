@@ -1,0 +1,18 @@
+﻿ID,Build,Date,Expected,Actual,Status,Evidence filename
+TC-01,Demo v1.0,2026-11-24,₹500,₹500,Pass,
+TC-02,Demo v1.0,2026-11-24,Invalid username or password.,Invalid username or password.,Pass,
+TC-03,Demo v1.0,2026-11-24,"Top-up must be between ₹10 and ₹5,000. | balance ₹500 | history rows 0","Top-up must be between ₹10 and ₹5,000. | balance ₹500 | history rows 0",Pass,
+TC-04,Demo v1.0,2026-11-24,TX-0001 • Successful | balance ₹510 | history rows 1,TX-0001 • Successful | balance ₹510 | history rows 1,Pass,
+TC-05,Demo v1.0,2026-11-24,TX-0001 • Successful | balance ₹511 | history rows 1,TX-0001 • Successful | balance ₹511 | history rows 1,Pass,
+TC-06,Demo v1.0,2026-11-24,"TX-0001 • Successful | balance ₹5,499 | history rows 1","TX-0001 • Successful | balance ₹5,499 | history rows 1",Pass,
+TC-07,Demo v1.0,2026-11-24,"TX-0001 • Successful | balance ₹5,500 | history rows 1","TX-0001 • Successful | balance ₹5,500 | history rows 1",Pass,
+TC-08,Demo v1.0,2026-11-24,"Top-up must be between ₹10 and ₹5,000. | balance ₹500 | history rows 0","Top-up must be between ₹10 and ₹5,000. | balance ₹500 | history rows 0",Pass,
+TC-09,Demo v1.0,2026-11-24,TX-0001 • Successful | balance ₹300 | history rows 1 | bob ₹300 | history TX-0001 / Transfer / alice / bob / ₹200 / Successful,TX-0001 • Successful | balance ₹300 | history rows 1 | bob ₹300 | history TX-0001 / Transfer / alice / bob / ₹200 / Successful,Pass,TC-09-transfer.png
+TC-10,Demo v1.0,2026-11-24,Insufficient balance. | balance ₹500 | history rows 0,Insufficient balance. | balance ₹500 | history rows 0,Pass,
+TC-11,Demo v1.0,2026-11-24,Choose another existing wallet. | balance ₹500 | history rows 0,Choose another existing wallet. | balance ₹500 | history rows 0,Pass,
+TC-12,Demo v1.0,2026-11-24,Choose another existing wallet. | balance ₹500 | history rows 0,Choose another existing wallet. | balance ₹500 | history rows 0,Pass,
+TC-13,Demo v1.0,2026-11-24,Enter a positive whole-rupee amount. | balance ₹500 | history rows 0,Enter a positive whole-rupee amount. | balance ₹500 | history rows 0,Pass,
+TC-14,Demo v1.0,2026-11-24,TX-0001 • Pending | balance ₹300 | history rows 1,TX-0001 • Pending | balance ₹300 | history rows 1,Pass,
+TC-15,Demo v1.0,2026-11-24,TX-0001 • Pending | balance ₹300 | history rows 1 -> TX-0001 • Successful | balance ₹300 | history rows 1 | history status Successful,TX-0001 • Pending | balance ₹300 | history rows 1 -> TX-0001 • Successful | balance ₹300 | history rows 1 | history status Successful,Pass,
+TC-16,Demo v1.0,2026-11-24,TX-0001 • Pending | balance ₹300 | history rows 1 -> TX-0001 • Failed | balance ₹500 | history rows 1 | history status Failed,TX-0001 • Pending | balance ₹300 | history rows 1 -> TX-0001 • Failed | balance ₹500 | history rows 1 | history status Failed,Pass,TC-16-payment-refund.png
+TC-17,Demo v1.0,2026-11-24,TX-0002 / Transfer / alice / bob / ₹200 / Successful | TX-0001 / Top-up / alice /  / ₹100 / Successful,TX-0002 / Transfer / alice / bob / ₹200 / Successful | TX-0001 / Top-up / alice /  / ₹100 / Successful,Pass,
