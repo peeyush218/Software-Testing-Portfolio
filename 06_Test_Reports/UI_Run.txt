@@ -1,0 +1,19 @@
+TC-01 Pass
+TC-02 Pass
+TC-03 Pass
+TC-04 Pass
+TC-05 Pass
+TC-06 Pass
+TC-07 Pass
+TC-08 Pass
+TC-09 Pass
+TC-10 Pass
+TC-11 Pass
+TC-12 Pass
+TC-13 Pass
+TC-14 Pass
+TC-15 Pass
+TC-16 Pass
+TC-17 Pass
+Demo v1.0: 17/17 passed.
+DRILL-01: Fail (see Defect_Drill_Log.csv for recorded values).

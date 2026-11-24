@@ -1,0 +1,11 @@
+test_exact_balance_transfer_updates_both_accounts (__main__.WalletTests.test_exact_balance_transfer_updates_both_accounts) ... ok
+test_failed_payment_returns_reserved_funds_once (__main__.WalletTests.test_failed_payment_returns_reserved_funds_once) ... ok
+test_history_shows_only_the_accounts_own_activity (__main__.WalletTests.test_history_shows_only_the_accounts_own_activity) ... ok
+test_negative_and_fractional_amounts_do_not_change_state (__main__.WalletTests.test_negative_and_fractional_amounts_do_not_change_state) ... ok
+test_successful_payment_keeps_reserved_funds_deducted (__main__.WalletTests.test_successful_payment_keeps_reserved_funds_deducted) ... ok
+test_top_up_stores_reference_and_amount (__main__.WalletTests.test_top_up_stores_reference_and_amount) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK
