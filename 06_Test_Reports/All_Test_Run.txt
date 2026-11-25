@@ -1,0 +1,78 @@
+
+Black-box desktop UI and seeded defect exercise
+TC-01 Pass
+TC-02 Pass
+TC-03 Pass
+TC-04 Pass
+TC-05 Pass
+TC-06 Pass
+TC-07 Pass
+TC-08 Pass
+TC-09 Pass
+TC-10 Pass
+TC-11 Pass
+TC-12 Pass
+TC-13 Pass
+TC-14 Pass
+TC-15 Pass
+TC-16 Pass
+TC-17 Pass
+Demo v1.0: 17/17 passed.
+DRILL-01: Fail (see Defect_Drill_Log.csv for recorded values).
+
+Existing wallet unit tests
+test_exact_balance_transfer_updates_both_accounts (__main__.WalletTests.test_exact_balance_transfer_updates_both_accounts) ... ok
+test_failed_payment_returns_reserved_funds_once (__main__.WalletTests.test_failed_payment_returns_reserved_funds_once) ... ok
+test_history_shows_only_the_accounts_own_activity (__main__.WalletTests.test_history_shows_only_the_accounts_own_activity) ... ok
+test_negative_and_fractional_amounts_do_not_change_state (__main__.WalletTests.test_negative_and_fractional_amounts_do_not_change_state) ... ok
+test_successful_payment_keeps_reserved_funds_deducted (__main__.WalletTests.test_successful_payment_keeps_reserved_funds_deducted) ... ok
+test_top_up_stores_reference_and_amount (__main__.WalletTests.test_top_up_stores_reference_and_amount) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK
+
+White-box wallet decision tests
+test_wb_01_login_guard (__main__.WalletWhiteBoxTests.test_wb_01_login_guard) ... ok
+test_wb_02_amount_format_and_zero_guards (__main__.WalletWhiteBoxTests.test_wb_02_amount_format_and_zero_guards) ... ok
+test_wb_03_top_up_range_guard (__main__.WalletWhiteBoxTests.test_wb_03_top_up_range_guard) ... ok
+test_wb_04_transfer_recipient_guard (__main__.WalletWhiteBoxTests.test_wb_04_transfer_recipient_guard) ... ok
+test_wb_05_transfer_balance_guard (__main__.WalletWhiteBoxTests.test_wb_05_transfer_balance_guard) ... ok
+test_wb_06_payment_start_balance_guard (__main__.WalletWhiteBoxTests.test_wb_06_payment_start_balance_guard) ... ok
+test_wb_07_payment_lookup_type_and_owner_guard (__main__.WalletWhiteBoxTests.test_wb_07_payment_lookup_type_and_owner_guard) ... ok
+test_wb_08_payment_success_failure_and_finalized_guard (__main__.WalletWhiteBoxTests.test_wb_08_payment_success_failure_and_finalized_guard) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.009s
+
+OK
+login:26 | true hit | false hit
+_amount:32 | true hit | false hit
+_amount:35 | true hit | false hit
+top_up:47 | true hit | false hit
+transfer:54 | true hit | false hit
+transfer:56 | true hit | false hit
+start_payment:64 | true hit | false hit
+complete_payment:74 | true hit | false hit
+complete_payment:76 | true hit | false hit
+complete_payment:78 | true hit | false hit
+Wallet source decisions: 20/20 outcomes observed (10 decisions).
+
+HTTP API tests
+HTTP transport: in-process HTTP streams
+test_api_01_login_returns_session_and_balance (__main__.WalletAPITests.test_api_01_login_returns_session_and_balance) ... ok
+test_api_02_bad_login_and_missing_token_are_rejected (__main__.WalletAPITests.test_api_02_bad_login_and_missing_token_are_rejected) ... ok
+test_api_03_top_up_at_lower_limit_updates_balance (__main__.WalletAPITests.test_api_03_top_up_at_lower_limit_updates_balance) ... ok
+test_api_04_invalid_top_ups_do_not_change_state (__main__.WalletAPITests.test_api_04_invalid_top_ups_do_not_change_state) ... ok
+test_api_05_transfer_updates_both_wallets_and_recipient_history (__main__.WalletAPITests.test_api_05_transfer_updates_both_wallets_and_recipient_history) ... ok
+test_api_06_rejected_transfers_do_not_change_state (__main__.WalletAPITests.test_api_06_rejected_transfers_do_not_change_state) ... ok
+test_api_07_failed_payment_refunds_once (__main__.WalletAPITests.test_api_07_failed_payment_refunds_once) ... ok
+test_api_08_successful_payment_keeps_funds_deducted (__main__.WalletAPITests.test_api_08_successful_payment_keeps_funds_deducted) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.029s
+
+OK
+
+All four suites completed successfully.

@@ -31,6 +31,10 @@ Design cases with equivalence partitioning, boundary value analysis, a decision 
 
 Before a team rerun, assign one person to setup and execution, one to case and evidence review, and one to presentation. One person can take several roles.
 
+## White box and API scope
+
+Inspect the Wallet source and exercise the true and false outcomes of its direct decisions. Test the local HTTP interface by comparing status codes, JSON and wallet state with expected results. Start each case with fresh data. Use the aggregate runner to repeat all four suites. See the [extended case design](../02_Test_Case_Design/Extended_Test_Design.md).
+
 ## Completion criteria
 
 Every planned baseline case has a recorded outcome. Each observed baseline failure has a defect reference or an explanation, and each blocked case identifies its dependency. The unit run, summary, screenshots, and any defect evidence are available from the repository.

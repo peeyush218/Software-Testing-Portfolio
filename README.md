@@ -31,4 +31,4 @@ This portfolio tests a local desktop wallet that supports sign-in, demo top-ups,
 | Images from the run | [Screenshots](07_Screenshots/README.md) |
 | Findings and coverage limits | [Conclusion](Conclusion.md) |
 
-For GitHub publishing steps and a short viva walkthrough, see [Submission guide](SUBMISSION_GUIDE.md).
+Run all four suites with `python 05_Test_Automation/run_all.py`. See the [extended white-box and API test design](02_Test_Case_Design/Extended_Test_Design.md), [combined run log](06_Test_Reports/All_Test_Run.txt), and [automation guide](05_Test_Automation/README.md).
